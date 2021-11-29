@@ -1,24 +1,12 @@
-# README
+## GraphQL Sample on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### ⭐ Star us on GitHub — it motivates a lot!
 
-Things you may want to cover:
+### Requirements:  
 
-* Ruby version
+Clone down this repository. You will need `ruby` 2.7.2 installed globally on your machine, `Postgres` database server
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+🚀 Running:
+    $ bin/bundle install
+    $ bin/rails db:create db:migrate db:seed 
+    $ bin/rails s -p 3000

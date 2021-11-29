@@ -10,6 +10,21 @@ module Types
     # TODO: remove me
     field :test_field, String, null: false,
       description: "An example field added by the generator"
+
+    field :books, [Types::BookType], null: false,
+      description: "Books from library"
+
+    field :authors, [Types::AuthorType], null: false,
+      description: "Books from library"
+
+    def books
+      Book.includes(:author).all
+    end
+
+    def authors
+      Author.all
+    end
+
     def test_field
       "Hello World!"
     end
