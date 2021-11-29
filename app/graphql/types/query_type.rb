@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Types
   class QueryType < Types::BaseObject
     # Add `node(id: ID!) and `nodes(ids: [ID!]!)`
@@ -9,24 +11,30 @@ module Types
 
     # TODO: remove me
     field :test_field, String, null: false,
-      description: "An example field added by the generator"
+                               description: 'An example field added by the generator'
 
     field :books, [Types::BookType], null: false,
-      description: "Books from library"
-
-    field :authors, [Types::AuthorType], null: false,
-      description: "Books from library"
-
-    def books
-      Book.includes(:author).all
+                                     description: 'Books from library' do
+      argument :page, Integer, required: false
+      argument :limit, Integer, required: false
     end
 
-    def authors
-      Author.all
+    field :authors, [Types::AuthorType], null: false,
+                                         description: 'Authors from library' do
+      argument :page, Integer, required: false
+      argument :limit, Integer, required: false
+    end
+
+    def books(page: nil, limit: nil)
+      Book.includes(:author).all.page(page).per(limit)
+    end
+
+    def authors(page: nil, limit: nil)
+      Author.all.page(page).per(limit)
     end
 
     def test_field
-      "Hello World!"
+      'Hello World!'
     end
   end
 end
