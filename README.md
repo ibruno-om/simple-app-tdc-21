@@ -4,7 +4,7 @@
 
 ### Requirements:  
 
-Clone down this repository. You will need `ruby` 2.7.2 installed globally on your machine, `Postgres` database server
+Clone down this repository. You will need `ruby` 2.7.2 installed globally on your machine, `SQLite3` database
 
 🚀 Running:
     $ bin/bundle install
