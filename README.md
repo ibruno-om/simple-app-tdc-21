@@ -7,9 +7,9 @@
 Clone down this repository. You will need `ruby` 2.7.2 installed globally on your machine, `SQLite3` database
 
 🚀 Running:
-    $ bin/bundle install
-    $ bin/rails db:create db:migrate db:seed 
-    $ bin/rails s -p 3000
+    `bin/bundle install`
+    `bin/rails db:create db:migrate db:seed`
+    `bin/rails s -p 3000`
 
 ### Books
 
